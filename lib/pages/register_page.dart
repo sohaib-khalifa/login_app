@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:login_app_test/constants.dart';
-import 'package:login_app_test/pages/register_page.dart';
 import 'package:login_app_test/widgets/custom_button.dart';
 import 'package:login_app_test/widgets/custom_text_field.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
+  static final String routeName = 'RegisterPage';
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // backgroundColor: Color(0xff2B475E),
         backgroundColor: kPrimaryColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -19,7 +20,7 @@ class LoginPage extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // Spacer(flex: 1),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SvgPicture.asset('assets/images/login.svg', height: 300),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -36,11 +37,11 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               // Spacer(flex: 1),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 children: [
                   Text(
-                    'LOGIN',
+                    'REGISTER',
                     style: TextStyle(fontSize: 24, color: Colors.white),
                   ),
                 ],
@@ -53,13 +54,13 @@ class LoginPage extends StatelessWidget {
                 lableText: 'Password',
               ),
               const SizedBox(height: 20),
-              CustomButton(text: 'LOGIN'),
+              CustomButton(text: 'REGISTER'),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don\'t have account ?  ',
+                    'Already have an account?  ',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   // Text(
@@ -72,18 +73,11 @@ class LoginPage extends StatelessWidget {
                   // ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RegisterPage.routeName);
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const RegisterPage();
-                      //     },
-                      //   ),
-                      // );
+                      // Navigator.pushNamed(context, 'LoginPage'); // problem
+                      Navigator.pop(context); // Go back to the previous page
                     },
                     child: Text(
-                      'Register',
+                      'Login',
                       style: TextStyle(
                         color: Color(0xffC7EDE6),
                         fontWeight: FontWeight.bold,
