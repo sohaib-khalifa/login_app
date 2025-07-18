@@ -229,6 +229,7 @@ class RegisterPage extends StatelessWidget {
               ),
               // Spacer(flex: 3),
               const SizedBox(height: 60),
+              
             ],
           ),
         ),

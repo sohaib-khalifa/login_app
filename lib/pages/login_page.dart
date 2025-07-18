@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:login_app_test/constants.dart';
+import 'package:login_app_test/pages/home_page.dart';
 import 'package:login_app_test/pages/register_page.dart';
 import 'package:login_app_test/widgets/custom_button.dart';
 import 'package:login_app_test/widgets/custom_text_field.dart';
@@ -80,6 +81,12 @@ class LoginPage extends StatelessWidget {
               ),
               // Spacer(flex: 3),
               const SizedBox(height: 60),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, HomePage.routeName);
+                },
+                child: Center(child: Text('test')),
+              ),
             ],
           ),
         ),
