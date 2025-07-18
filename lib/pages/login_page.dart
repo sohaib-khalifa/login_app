@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don\'t have account ?  ',
+                    'Don\'t have an account ?  ',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
 
