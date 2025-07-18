@@ -131,6 +131,7 @@ class RegisterPage extends StatelessWidget {
                     );
                     return;
                   }
+
                   // ✅ تحقق من وجود @ في الإيميل
                   if (!email!.contains('@')) {
                     if (!context.mounted) return;
@@ -142,6 +143,7 @@ class RegisterPage extends StatelessWidget {
                     );
                     return;
                   }
+
                   try {
                     UserCredential user = await FirebaseAuth.instance
                         .createUserWithEmailAndPassword(
@@ -149,6 +151,14 @@ class RegisterPage extends StatelessWidget {
                           password: password!,
                         );
                     if (!context.mounted) return; // ✅ تأكد إن context لسه شغال
+
+                    // ✅ رسالة النجاح بعد ما يتم إنشاء الحساب
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        backgroundColor: Colors.green,
+                        content: Text('Account created successfully!'),
+                      ),
+                    );
                   } on FirebaseAuthException catch (e) {
                     if (!context.mounted) {
                       return; // ✅ قبل استخدام context بعد await
