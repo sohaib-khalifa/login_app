@@ -62,25 +62,10 @@ class LoginPage extends StatelessWidget {
                     'Don\'t have account ?  ',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  // Text(
-                  //   '  Sign Up',
-                  //   style: TextStyle(
-                  //     color: Color(0xffC7EDE6),
-                  //     fontWeight: FontWeight.bold,
-                  //     fontSize: 16,
-                  //   ),
-                  // ),
+
                   TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, RegisterPage.routeName);
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) {
-                      //       return const RegisterPage();
-                      //     },
-                      //   ),
-                      // );
                     },
                     child: Text(
                       'Register',
