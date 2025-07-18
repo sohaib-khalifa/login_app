@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:login_app_test/widgets/news_list_view_builder.dart';
-
-// import 'package:news_app/widgets/news_list_view_builder.dart';
+import '../widgets/news_list_view_builder.dart';
+import '../widgets/news_stories_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
   static final String routeName = 'HomePage';
 
   @override
@@ -29,23 +29,13 @@ class HomePage extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(child: SizedBox(height: 32)),
+            SliverToBoxAdapter(child: NewsStoriesList()),
             // SliverToBoxAdapter(child: NewsListView()), --> less efficient
             NewsListViewBuilder(category: 'general'),
             // NewsListView() ==> because NewsListView() consider ==> SliverList
           ],
         ),
       ),
-
-      // body: Padding(
-      //   padding: const EdgeInsets.symmetric(horizontal: 16),
-      //   child: Column(
-      //     children: [
-      //       CategoriesListView(),
-      //       const SizedBox(height: 32),
-      //       Expanded(child: NewsListView()),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }
