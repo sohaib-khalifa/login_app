@@ -20,7 +20,7 @@ class LoginApp extends StatelessWidget {
       routes: {
         'LoginPage': (context) => const LoginPage(),
         // 'RegisterPage': (context) => const RegisterPage(),
-        RegisterPage.routeName: (context) => const RegisterPage(),
+        RegisterPage.routeName: (context) =>  RegisterPage(),
       },
 
       initialRoute: 'LoginPage',
