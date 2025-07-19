@@ -76,39 +76,13 @@ class HomePage extends StatelessWidget {
   static final String routeName = 'HomePage';
 
   Future<void> _refreshNews() async {
-    // هنا تقدر تضيف منطق إعادة تحميل الأخبار من API مثلاً
     await Future.delayed(Duration(seconds: 2));
-    print('تم التحديث!');
+    print('News refreshed');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        centerTitle: false,
-        title: Text(
-          'Instagram',
-          style: TextStyle(
-            fontFamily: 'Billabong',
-            fontSize: 32,
-            color: Colors.black,
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.favorite_border),
-            onPressed: () {},
-            color: Colors.black,
-          ),
-          IconButton(
-            icon: Icon(Icons.send),
-            onPressed: () {},
-            color: Colors.black,
-          ),
-        ],
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: RefreshIndicator(
@@ -118,6 +92,34 @@ class HomePage extends StatelessWidget {
               parent: AlwaysScrollableScrollPhysics(),
             ),
             slivers: [
+              SliverAppBar(
+                pinned: false,
+                floating: true,
+                backgroundColor: Colors.white,
+                elevation: 1,
+                centerTitle: false,
+                title: Text(
+                  'Instagram',
+                  style: TextStyle(
+                    fontFamily: 'Billabong',
+                    fontSize: 32,
+                    color: Colors.black,
+                  ),
+                ),
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.favorite_border),
+                    onPressed: () {},
+                    color: Colors.black,
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.send),
+                    onPressed: () {},
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+              SliverToBoxAdapter(child: SizedBox(height: 32)),
               SliverToBoxAdapter(child: SizedBox(height: 32)),
               SliverToBoxAdapter(child: NewsStoriesList()),
               NewsListViewBuilder(category: 'general'),

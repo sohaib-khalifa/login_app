@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:login_app_test/constants.dart';
 import 'package:login_app_test/pages/home_page.dart';
+import 'package:login_app_test/pages/main_screen.dart';
 import 'package:login_app_test/pages/register_page.dart';
 import 'package:login_app_test/widgets/custom_button.dart';
 import 'package:login_app_test/widgets/custom_text_field.dart';
@@ -45,6 +46,7 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(fontSize: 24, color: Colors.white),
                   ),
                 ],
+
               ),
               const SizedBox(height: 20),
               CustomTextField(hintText: 'Example@mail.com', lableText: 'Email'),
@@ -59,7 +61,7 @@ class LoginPage extends StatelessWidget {
                 onTap: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => MainScreen()),
                   );
                 },
               ),
@@ -74,6 +76,13 @@ class LoginPage extends StatelessWidget {
 
                   TextButton(
                     onPressed: () {
+                      ///todo: lkdslkvm jn
+                      /// logo out
+                      // Navigator. pushAndRemoveUntil<void>(
+                      //   context,
+                      //   MaterialPageRoute<void>(builder: (BuildContext context) => const LoginPage()),
+                      //   ModalRoute. withName('/'),
+                      // );
                       Navigator.pushNamed(context, RegisterPage.routeName);
                     },
                     child: Text(
