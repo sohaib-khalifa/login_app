@@ -92,6 +92,7 @@ class HomePage extends StatelessWidget {
               parent: AlwaysScrollableScrollPhysics(),
             ),
             slivers: [
+              //region AppBar
               SliverAppBar(
                 pinned: false,
                 floating: true,
@@ -119,10 +120,19 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              //endregion
+              //region Sizedbox
               SliverToBoxAdapter(child: SizedBox(height: 32)),
+              //endregion
+              //region Sizedbox
               SliverToBoxAdapter(child: SizedBox(height: 32)),
+              //endregion
+              //region story
               SliverToBoxAdapter(child: NewsStoriesList()),
+              //endregion
+              //region body
               NewsListViewBuilder(category: 'general'),
+              //endregion
             ],
           ),
         ),
