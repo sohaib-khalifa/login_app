@@ -10,18 +10,44 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   title: Row(
+      //     mainAxisSize: MainAxisSize.min,
+      //     children: [
+      //       Text('News'),
+      //       Text('Cloud', style: TextStyle(color: Colors.orange)),
+      //     ],
+      //   ),
+      // ),
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('News'),
-            Text('Cloud', style: TextStyle(color: Colors.orange)),
-          ],
+        backgroundColor: Colors.white,
+        elevation: 1,
+        centerTitle: false,
+        title: Text(
+          'Instagram',
+          style: TextStyle(
+            fontFamily: 'Billabong',
+            fontSize: 32,
+            color: Colors.black,
+          ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: () {},
+            color: Colors.black,
+          ),
+          IconButton(
+            icon: Icon(Icons.send),
+            onPressed: () {},
+            color: Colors.black,
+          ),
+        ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
 

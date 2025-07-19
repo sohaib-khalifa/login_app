@@ -54,7 +54,15 @@ class LoginPage extends StatelessWidget {
                 lableText: 'Password',
               ),
               const SizedBox(height: 20),
-              CustomButton(text: 'LOGIN'),
+              CustomButton(
+                text: 'LOGIN',
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+              ),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -81,12 +89,12 @@ class LoginPage extends StatelessWidget {
               ),
               // Spacer(flex: 3),
               const SizedBox(height: 60),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, HomePage.routeName);
-                },
-                child: Center(child: Text('test')),
-              ),
+              // TextButton(
+              //   onPressed: () {
+              //     Navigator.pushNamed(context, HomePage.routeName);
+              //   },
+              //   child: Center(child: Text('test')),
+              // ),
             ],
           ),
         ),
